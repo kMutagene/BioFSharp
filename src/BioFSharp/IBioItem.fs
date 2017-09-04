@@ -12,7 +12,7 @@ type IBioItem =
     abstract member isTerminator : bool         
     abstract member isGap        : bool    
 
-
+///Lexer Tags for parsing BioItems
 type NcbiParsingType = 
     | StandardCodes  = 10y 
     | AmbiguityCodes = 20y
@@ -24,7 +24,7 @@ module BioItem =
 
     /// Returns then display name of the bio item
     let inline name (bItem:#IBioItem) =
-        bItem.Symbol
+        bItem.Name
     
     /// Returns then symbol of the bio item
     let inline symbol (bItem:#IBioItem) =

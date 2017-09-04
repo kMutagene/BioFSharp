@@ -1,10 +1,11 @@
 ﻿namespace BioFSharp
 
+///Contains Functionalities for parsing Bioitems
 module BioItemsConverter =
     
     
     open FSharp.Care
-
+    ///Contains Functionalities for trying to parse Bioitems
     module OptionConverter =  
         
         /// Type abbreviation for converting char to optional Nucleotide
@@ -21,13 +22,32 @@ module BioItemsConverter =
             | AminoAcids.ParsedAminoAcidChar.GapTer         (aa) -> Some aa 
             | AminoAcids.ParsedAminoAcidChar.NoAAChar (_)        -> None                
 
+        /// Converters char to AminoAcid option by ignoring bad character
+        /// Ignores Gap and Ter
+        let charToOptionAminoAcidWithoutGapTer (aac:char) =
+            let pac = AminoAcids.charToParsedAminoAcidChar aac
+            match pac with
+            | AminoAcids.ParsedAminoAcidChar.StandardCodes  (aa) -> Some aa
+            | AminoAcids.ParsedAminoAcidChar.AmbiguityCodes (aa) -> Some aa 
+            | AminoAcids.ParsedAminoAcidChar.GapTer         (_)  -> None
+            | AminoAcids.ParsedAminoAcidChar.NoAAChar (_)        -> None
         
-        /// Converters char to AminoAcid option by ignoring bad character and ambiguis code
+        /// Converters char to AminoAcid option by ignoring bad character and ambiguis code        
         let charToOptionStandardAminoAcid (aac:char) =
             let pac = AminoAcids.charToParsedAminoAcidChar aac
             match pac with
             | AminoAcids.ParsedAminoAcidChar.StandardCodes  (aa) -> Some aa
             | AminoAcids.ParsedAminoAcidChar.GapTer         (aa) -> Some aa 
+            | AminoAcids.ParsedAminoAcidChar.AmbiguityCodes (_)  -> None
+            | AminoAcids.ParsedAminoAcidChar.NoAAChar (_)        -> None
+
+        /// Converters char to AminoAcid option by ignoring bad character and ambiguis code
+        /// Ignores Gap and Ter
+        let charToOptionStandardAminoAcidWithoutGapTer (aac:char) =
+            let pac = AminoAcids.charToParsedAminoAcidChar aac
+            match pac with
+            | AminoAcids.ParsedAminoAcidChar.StandardCodes  (aa) -> Some aa
+            | AminoAcids.ParsedAminoAcidChar.GapTer         (_)  -> None 
             | AminoAcids.ParsedAminoAcidChar.AmbiguityCodes (_)  -> None
             | AminoAcids.ParsedAminoAcidChar.NoAAChar (_)        -> None
 

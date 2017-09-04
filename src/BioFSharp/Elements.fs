@@ -6,7 +6,7 @@ open FSharp.Care
 open FSharp.Care.Math
 open Isotopes
     
-
+///Contains chemical elements represented as a mixture of their stable isotopes and functionality for building them
 module Elements =
     
     //  #####
@@ -158,21 +158,33 @@ module Elements =
 //        | Tri   {X = x} -> x
 //        | Multi {X = x} -> x
 
-
+    ///Contains the biologically relevant, chemical elements represented as a mixture of their stable isotopes
     module Table = 
-
-        let P = Mono (createMono "P" (Isotopes.Table.P31,Isotopes.Table.P31.NatAbundance) )
-    
+        ///Hydrogen
         let H = Di   (createDi "H" (Isotopes.Table.H1,Isotopes.Table.H1.NatAbundance) (Isotopes.Table.H2,Isotopes.Table.H2.NatAbundance) )
+        ///Carbon
         let C = Di   (createDi "C" (Isotopes.Table.C12,Isotopes.Table.C12.NatAbundance) (Isotopes.Table.C13,Isotopes.Table.C13.NatAbundance) )
+        ///Nitrogen
         let N = Di   (createDi "N" (Isotopes.Table.N14,Isotopes.Table.N14.NatAbundance) (Isotopes.Table.N15,Isotopes.Table.N15.NatAbundance) )
-
+        ///Oxygen
         let O = Tri  (createTri "O" (Isotopes.Table.O16,Isotopes.Table.O16.NatAbundance) (Isotopes.Table.O17,Isotopes.Table.O17.NatAbundance) (Isotopes.Table.O18,Isotopes.Table.O18.NatAbundance) )
+        ///Sodium
+        let Na = Mono (createMono "Na" (Isotopes.Table.Na23,Isotopes.Table.Na23.NatAbundance) )
+        ///Magnesium
+        let Mg = Tri  (createTri "Mg" (Isotopes.Table.Mg24,Isotopes.Table.Mg24.NatAbundance) (Isotopes.Table.Mg25,Isotopes.Table.Mg25.NatAbundance) (Isotopes.Table.Mg26,Isotopes.Table.Mg26.NatAbundance) )
+        ///Phosphorus
+        let P = Mono (createMono "P" (Isotopes.Table.P31,Isotopes.Table.P31.NatAbundance) )
+        ///Sulfur
         let S = Tri  (createTri "S" (Isotopes.Table.S32,Isotopes.Table.S32.NatAbundance) (Isotopes.Table.S33,Isotopes.Table.S33.NatAbundance) (Isotopes.Table.S34,Isotopes.Table.S34.NatAbundance) ) // Not tri but quad
+        ///Potassium
+        let K = Tri  (createTri "K" (Isotopes.Table.K39,Isotopes.Table.K39.NatAbundance) (Isotopes.Table.K40,Isotopes.Table.K40.NatAbundance) (Isotopes.Table.K41,Isotopes.Table.K41.NatAbundance) )
+        ///Copper
+        let Cu = Di   (createDi "Cu" (Isotopes.Table.Cu63,Isotopes.Table.Cu63.NatAbundance) (Isotopes.Table.Cu65,Isotopes.Table.Cu65.NatAbundance) )
 
-        // Attention! Se is Multi
+        ///Selenium  -Attention! Se is Multi-
         let Se = Mono (createMono "Se" (Isotopes.Table.Se74,Isotopes.Table.Se74.NatAbundance) )
-    
+        
+
         /// Returns element object according to element symbol string
         let ElementAsObject (symbol:string) =
             match symbol with
@@ -185,11 +197,13 @@ module Elements =
             | "Se"      -> Se
             | _ -> raise (System.ArgumentException("Element unknown"))
 
-
+        ///Contains elements with higher proportions of their heavy isotopes
         module Heavy =
 
+            ///Diisotopic representation of nitrogen with abundancy of N14 and N15 swapped
             let N15 = Di  (createDi "N15" (Isotopes.Table.N15,Isotopes.Table.N14.NatAbundance) (Isotopes.Table.N14,Isotopes.Table.N15.NatAbundance) )
             
+            ///Monoisotopic representation of pure N15
             let N15full = Mono (createMono "N15" (Isotopes.Table.N15,Isotopes.Table.N14.NatAbundance))
 
 

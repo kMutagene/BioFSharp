@@ -29,16 +29,26 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "content", "content", "{8E6D5255-776D-4B61-85F9-73C37AA1FB9A}"
 	ProjectSection(SolutionItems) = preProject
 		docs\content\Alignment.fsx = docs\content\Alignment.fsx
+		docs\content\Aminoacids.fsx = docs\content\Aminoacids.fsx
+		docs\content\BioCollections.fsx = docs\content\BioCollections.fsx
+		docs\content\BioDB.fsx = docs\content\BioDB.fsx
 		docs\content\BioID.fsx = docs\content\BioID.fsx
-		docs\content\BioSequence.fsx = docs\content\BioSequence.fsx
 		docs\content\BlastWrapper.fsx = docs\content\BlastWrapper.fsx
-		docs\content\BoyerMooreUsage.fsx = docs\content\BoyerMooreUsage.fsx
-		docs\content\CentroidSpectra.fsx = docs\content\CentroidSpectra.fsx
-		docs\content\ChargeStateDetermination.fsx = docs\content\ChargeStateDetermination.fsx
+		docs\content\Distributions.fsx = docs\content\Distributions.fsx
+		docs\content\Elements.fsx = docs\content\Elements.fsx
 		docs\content\Formula.fsx = docs\content\Formula.fsx
+		docs\content\IBioItem.fsx = docs\content\IBioItem.fsx
 		docs\content\index.fsx = docs\content\index.fsx
-		docs\content\PeptideLookUp.fsx = docs\content\PeptideLookUp.fsx
+		docs\content\Introduction.fsx = docs\content\Introduction.fsx
+		docs\content\Isotopes.fsx = docs\content\Isotopes.fsx
+		docs\content\LibraryStructure.fsx = docs\content\LibraryStructure.fsx
+		docs\content\MoleculeFinding.fsx = docs\content\MoleculeFinding.fsx
+		docs\content\Nucleotides.fsx = docs\content\Nucleotides.fsx
+		docs\content\Plotly.fsx = docs\content\Plotly.fsx
 		docs\content\Readers.fsx = docs\content\Readers.fsx
+		docs\content\StatisticalMeasures.fsx = docs\content\StatisticalMeasures.fsx
+		docs\content\StatisticalTests.fsx = docs\content\StatisticalTests.fsx
+		docs\content\StringMatching.fsx = docs\content\StringMatching.fsx
 		docs\content\tutorial.fsx = docs\content\tutorial.fsx
 	EndProjectSection
 EndProject
@@ -50,13 +60,13 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharp.Care", "..\FSharp.Ca
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharp.Care.IO", "..\FSharp.Care\src\FSharp.Care.IO\FSharp.Care.IO.fsproj", "{2BD8F01A-03CE-4907-9449-B35B73EEC916}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "BioFSharp.Mz", "src\BioFSharp.Mz\BioFSharp.Mz.fsproj", "{5846FCAC-F2D4-4D83-9BE2-C3994CBDAE5C}"
-EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "BioFSharp.IO", "src\BioFSharp.IO\BioFSharp.IO.fsproj", "{5E3592D6-EBE7-409D-ACF5-541DBE44E891}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "BioFSharp.Stats", "src\BioFSharp.Stats\BioFSharp.Stats.fsproj", "{53E4D6A1-DE4C-4351-BD94-2402B45DA6E5}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharp.Stats", "..\FSharp.Stats\src\FSharp.Stats\FSharp.Stats.fsproj", "{820C8407-795A-4DBF-AB4F-9F7852CE8EF4}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharp.Stats", "..\FSharp.Stats\src\FSharp.Stats\FSharp.Stats.fsproj", "{C51D7AC8-D454-4467-A2B5-051B0C90FD5F}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "BioFSharp.Stats", "src\BioFSharp.Stats\BioFSharp.Stats.fsproj", "{5BDD2574-E123-4E88-95D2-6F9F58053974}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "BioFSharp.BioDB", "src\BioFSharp.BioDB\BioFSharp.BioDB.fsproj", "{2291C80C-C2B0-46FE-BEFD-BB0F956CFA82}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -98,14 +108,6 @@ Global
 		{2BD8F01A-03CE-4907-9449-B35B73EEC916}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2BD8F01A-03CE-4907-9449-B35B73EEC916}.Release|x64.ActiveCfg = Release|Any CPU
 		{2BD8F01A-03CE-4907-9449-B35B73EEC916}.Release|x64.Build.0 = Release|Any CPU
-		{5846FCAC-F2D4-4D83-9BE2-C3994CBDAE5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5846FCAC-F2D4-4D83-9BE2-C3994CBDAE5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5846FCAC-F2D4-4D83-9BE2-C3994CBDAE5C}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{5846FCAC-F2D4-4D83-9BE2-C3994CBDAE5C}.Debug|x64.Build.0 = Debug|Any CPU
-		{5846FCAC-F2D4-4D83-9BE2-C3994CBDAE5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5846FCAC-F2D4-4D83-9BE2-C3994CBDAE5C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5846FCAC-F2D4-4D83-9BE2-C3994CBDAE5C}.Release|x64.ActiveCfg = Release|Any CPU
-		{5846FCAC-F2D4-4D83-9BE2-C3994CBDAE5C}.Release|x64.Build.0 = Release|Any CPU
 		{5E3592D6-EBE7-409D-ACF5-541DBE44E891}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5E3592D6-EBE7-409D-ACF5-541DBE44E891}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E3592D6-EBE7-409D-ACF5-541DBE44E891}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -114,22 +116,30 @@ Global
 		{5E3592D6-EBE7-409D-ACF5-541DBE44E891}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5E3592D6-EBE7-409D-ACF5-541DBE44E891}.Release|x64.ActiveCfg = Release|Any CPU
 		{5E3592D6-EBE7-409D-ACF5-541DBE44E891}.Release|x64.Build.0 = Release|Any CPU
-		{53E4D6A1-DE4C-4351-BD94-2402B45DA6E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{53E4D6A1-DE4C-4351-BD94-2402B45DA6E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{53E4D6A1-DE4C-4351-BD94-2402B45DA6E5}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{53E4D6A1-DE4C-4351-BD94-2402B45DA6E5}.Debug|x64.Build.0 = Debug|Any CPU
-		{53E4D6A1-DE4C-4351-BD94-2402B45DA6E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{53E4D6A1-DE4C-4351-BD94-2402B45DA6E5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{53E4D6A1-DE4C-4351-BD94-2402B45DA6E5}.Release|x64.ActiveCfg = Release|Any CPU
-		{53E4D6A1-DE4C-4351-BD94-2402B45DA6E5}.Release|x64.Build.0 = Release|Any CPU
-		{C51D7AC8-D454-4467-A2B5-051B0C90FD5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C51D7AC8-D454-4467-A2B5-051B0C90FD5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C51D7AC8-D454-4467-A2B5-051B0C90FD5F}.Debug|x64.ActiveCfg = Debug|x64
-		{C51D7AC8-D454-4467-A2B5-051B0C90FD5F}.Debug|x64.Build.0 = Debug|x64
-		{C51D7AC8-D454-4467-A2B5-051B0C90FD5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C51D7AC8-D454-4467-A2B5-051B0C90FD5F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C51D7AC8-D454-4467-A2B5-051B0C90FD5F}.Release|x64.ActiveCfg = Release|x64
-		{C51D7AC8-D454-4467-A2B5-051B0C90FD5F}.Release|x64.Build.0 = Release|x64
+		{820C8407-795A-4DBF-AB4F-9F7852CE8EF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{820C8407-795A-4DBF-AB4F-9F7852CE8EF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{820C8407-795A-4DBF-AB4F-9F7852CE8EF4}.Debug|x64.ActiveCfg = Debug|x64
+		{820C8407-795A-4DBF-AB4F-9F7852CE8EF4}.Debug|x64.Build.0 = Debug|x64
+		{820C8407-795A-4DBF-AB4F-9F7852CE8EF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{820C8407-795A-4DBF-AB4F-9F7852CE8EF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{820C8407-795A-4DBF-AB4F-9F7852CE8EF4}.Release|x64.ActiveCfg = Release|x64
+		{820C8407-795A-4DBF-AB4F-9F7852CE8EF4}.Release|x64.Build.0 = Release|x64
+		{5BDD2574-E123-4E88-95D2-6F9F58053974}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BDD2574-E123-4E88-95D2-6F9F58053974}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BDD2574-E123-4E88-95D2-6F9F58053974}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{5BDD2574-E123-4E88-95D2-6F9F58053974}.Debug|x64.Build.0 = Debug|Any CPU
+		{5BDD2574-E123-4E88-95D2-6F9F58053974}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BDD2574-E123-4E88-95D2-6F9F58053974}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BDD2574-E123-4E88-95D2-6F9F58053974}.Release|x64.ActiveCfg = Release|Any CPU
+		{5BDD2574-E123-4E88-95D2-6F9F58053974}.Release|x64.Build.0 = Release|Any CPU
+		{2291C80C-C2B0-46FE-BEFD-BB0F956CFA82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2291C80C-C2B0-46FE-BEFD-BB0F956CFA82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2291C80C-C2B0-46FE-BEFD-BB0F956CFA82}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{2291C80C-C2B0-46FE-BEFD-BB0F956CFA82}.Debug|x64.Build.0 = Debug|Any CPU
+		{2291C80C-C2B0-46FE-BEFD-BB0F956CFA82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2291C80C-C2B0-46FE-BEFD-BB0F956CFA82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2291C80C-C2B0-46FE-BEFD-BB0F956CFA82}.Release|x64.ActiveCfg = Release|Any CPU
+		{2291C80C-C2B0-46FE-BEFD-BB0F956CFA82}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
